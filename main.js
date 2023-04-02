@@ -1,16 +1,28 @@
 var touches = []
+var cc = []
 var painter = 0
 var canvas = 0
 var color = 'black'
+var colors = 0
 var isPressed = false
 var viewport = 0
 var t0, t1 = 0
 window.onload = function(e) {
   t0 = performance.now()
+  colors = document.querySelectorAll('button[data-color]')
+  colors[0].style.boxShadow = `0 0 4px 6px ${color}`
   document.addEventListener('click', function(e) {
     if(e.target.hasAttribute('data-color')) {
+      colors[0].style.boxShadow = 'none'
       e.target.style.boxShadow = `0 0 4px 6px ${e.target.dataset.color}`
       color = e.target.dataset.color
+      cc.push(color)
+      for(let i = 0; i < colors.length; i++) {
+        if(cc.length > 1 && colors[i].dataset.color == cc[cc.length-2])
+        colors[i].style.boxShadow = 'none'
+      }
+      if(cc.length > 2) cc.shift(color)
+      console.log(cc)
     }
     if(e.target.closest('#cleaner'))
       painter.clearRect(0, 0, canvas.width, canvas.height)
