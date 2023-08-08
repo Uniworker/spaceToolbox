@@ -1,0 +1,57 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="content-language" content="en">
+  <meta http-equiv="x-ua-compatible" content="IE=edge">
+  <title>Painter Online</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="Uniworker">
+  <meta name="keywords" content="painter, online, drawing, line, graphics, sketching, writing, geometry, 2d">
+  <meta name="description" content="free drawing lightweight web page for simple usage">
+  <meta name="theme-color" content="#0a0a0a">
+  <meta property="og:locale" content="en">
+  <meta property="og:title" content="Painter Online">
+  <meta property="og:type" content="online service">
+  <meta property="og:url" content="https://uniworker.github.io/painteronline/">
+  <meta property="og:image" content="tile-wide.png">
+  <meta property="og:image:width" content="558" />
+  <meta property="og:image:height" content="270" />
+  <meta property="og:site_name" content="Painter Online">
+  <link rel="manifest" href="site.webmanifest">
+  <link type="image/x-icon" href="favicon.ico" />
+  <link href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css" rel="stylesheet">
+  <link href="css/normalize.min.css" rel="stylesheet">
+  <link href="css/bemskel.min.css" rel="stylesheet">
+  <link href="css/style.min.css" rel="stylesheet">
+  <script src="js/canvas.js"></script>
+</head>
+
+<body>
+  <div class="container flex-grid">
+    <section class="picker">
+      <button data-color="black"></button>
+      <button data-color="red"></button>
+      <button data-color="green"></button>
+      <button data-color="blue"></button>
+      <button data-color="orange"></button>
+      <button data-color="magenta"></button>
+    </section>
+    <section class="field">
+      <canvas id="canvas" height="540" width="960"></canvas>
+    </section>
+    <section class="taskbar">
+      <input id="magnifier" type="range" value="4" min="1" max="7">
+      <span id="range-output"></span>
+      <button id="cleaner">Clean</button>
+    </section>
+  </div>
+  <script>
+    window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
+    ga('create', 'UA-XXXXX-Y', 'auto'); ga('set', 'anonymizeIp', true); ga('set', 'transport', 'beacon'); ga('send', 'pageview')
+  </script>
+  <script src="https://www.google-analytics.com/analytics.js" async></script>
+</body>
+
+</html>

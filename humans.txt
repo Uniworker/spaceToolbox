@@ -4,3 +4,31 @@
 # TEAM
 
   Marko Yatsyn -- developer -- @Markyfreestyle
+
+  Timur Oranskyi -- admin -- @Timtechnician
+
+# THANKS
+
+    <name>
+
+# TECHNOLOGY COLOPHON
+
+  Approach - Mobile first, BEM
+  Front - CSS3 or SCSS?, HTML5, ES6
+  Back - Open Server(test), WordPress(prod) or Textolite?, GitHub Pages, PHP7+, MySQL
+  Libs:
+  Modernizr & HTML5Shiv - for IE
+  Normalize.css - for compatibility
+  Animate.css - for animation
+  Milligram.css - for template
+  PHP Mailer - for feedback
+
+  Elements:
+  Hamburger menu
+  "To the top" button
+  Spoiler
+  Scroll animation
+  Lang switch
+  Slider gallery
+  Social media feedback plugin
+  

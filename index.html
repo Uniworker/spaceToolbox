@@ -1,49 +1,69 @@
-<!doctype html>
+<!DOCTYPE html>
 <html class="no-js" lang="en">
 <head>
   <meta charset="utf-8">
   <meta http-equiv="content-language" content="en">
   <meta http-equiv="x-ua-compatible" content="IE=edge">
-  <title>Painter Online</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Space Toolbox - get tasks done</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
   <meta name="author" content="Uniworker">
-  <meta name="keywords" content="painter, online, drawing, line, graphics, sketching, writing, geometry, 2d">
-  <meta name="description" content="free drawing lightweight web page for simple usage">
+  <meta name="keywords" content="webtools, online, allinone, painter, notepad, image, comression">
+  <meta name="description" content="Free online webtools for everyone to simplify your work">
   <meta name="theme-color" content="#0a0a0a">
   <meta property="og:locale" content="en">
-  <meta property="og:title" content="Painter Online">
+  <meta property="og:title" content="Space Toolbox">
   <meta property="og:type" content="online service">
-  <meta property="og:url" content="https://uniworker.github.io/painteronline/">
+  <meta property="og:url" content="https://uniworker.github.io/spaceToolbox/">
   <meta property="og:image" content="tile-wide.png">
-  <meta property="og:image:width" content="558"/>
-  <meta property="og:image:height" content="270"/>
-  <meta property="og:site_name" content="Painter Online">
-  <link rel="manifest" href="site.webmanifest">
-  <link rel="icon" href="favicon.ico" type="image/x-icon">
-  <link rel="apple-touch-icon" href="icon.png">
-  <link rel="stylesheet" href="normalize.css">
-  <link rel="stylesheet" href="style.css">
-  <script src="modernizr-3.11.2.min.js" async></script>
-  <script src="main.js" async></script>
+  <meta property="og:image:width" content="558" />
+  <meta property="og:image:height" content="270" />
+  <meta property="og:site_name" content="Space Toolbox">
+  <link type="image/x-icon" href="favicon.ico" />
+  <link href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css" rel="stylesheet">
+  <link href="css/normalize.min.css" rel="stylesheet">
+  <link href="css/bemskel.min.css" rel="stylesheet">
+  <link href="css/style.min.css" rel="stylesheet">
+  <script src="js/app.js"></script>
 </head>
-<body>
-  <div class="container">
-    <section class="picker">
-      <button data-color="black"></button>
-      <button data-color="red"></button>
-      <button data-color="green"></button>
-      <button data-color="blue"></button>
-      <button data-color="orange"></button>
-      <button data-color="magenta"></button>
-    </section>
-    <section class="field">
-      <canvas id="canvas" height="540" width="960"></canvas>
-    </section>
-    <section class="taskbar">
-      <input id="magnifier" type="range" value="4" min="1" max="7">
-      <span id="range-output"></span>
-      <button id="cleaner">Clean</button>
-    </section>
+<body class="bg-dark text-light">
+  <audio id="sound" controls loop autoplay hidden>
+    <source src="background-sound.mp3" type="audio/mpeg">
+    &#9888;Your browser does not support the audio element.
+  </audio>
+  <div class="container flex-grid">
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="container__inner flex-grid">
+      <header class="header flex-grid">
+        <h1 class="header__title"><a href="#" title="Back to homepage">Space ✨ Toolbox</a></h1>
+      </header>
+      <main class="main flex-grid">
+        <div class="main__menu" id="button">
+          <div class="main__button --closed" id="menu"><span></span></div>
+        </div>
+        <ul class="main__tools" id="tools">
+          <li><a href="painter.html" title="Paint board"><span class="lnr lnr-pencil"></span></a></li>
+          <li><a href="taskmanager.html" title="Task manager"><span class="lnr lnr-pushpin"></span></a></li>
+          <li><a href="#" title="Link shortener"><span class="lnr lnr-unlink"></span></a></li>
+          <li><a href="#" title="Image comression"><span class="lnr lnr-picture"></span></a></li>
+          <li><a href="#" title="See you soon..."><span class="lnr lnr-code"></span></a></li>
+          <li><a href="#" title="See you soon..."><span class="lnr lnr-code"></span></a></li>
+          <li><a href="#" title="See you soon..."><span class="lnr lnr-code"></span></a></li>
+          <li><a href="#" title="See you soon..."><span class="lnr lnr-code"></span></a></li>
+        </ul>
+      </main>
+      <footer class="footer flex-grid">
+        <p class="footer__hint"><span>©2023 | Created by </span><a
+            href="https://www.youtube.com/channel/UC-ii73NUvqnJhGpieMlMstQ" target="_blank" title="Follow me">UNIWORKER</a>
+        </p>
+      </footer>
+    </div>
   </div>
   <script>
     window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;

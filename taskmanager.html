@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="content-language" content="en">
+  <meta http-equiv="x-ua-compatible" content="IE=edge">
+  <title>Task manager</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+  <meta name="author" content="Uniworker">
+  <meta name="keywords" content="webtools, online, task, notepad, manager">
+  <meta name="description" content="Create and save tasks to get it done">
+  <meta name="theme-color" content="#0a0a0a">
+  <meta property="og:locale" content="en">
+  <meta property="og:title" content="Task manager">
+  <meta property="og:type" content="online service">
+  <meta property="og:url" content="https://uniworker.github.io/spaceToolbox/">
+  <meta property="og:image" content="tile-wide.png">
+  <meta property="og:image:width" content="558" />
+  <meta property="og:image:height" content="270" />
+  <meta property="og:site_name" content="Task manager">
+  <link type="image/x-icon" href="favicon.ico" />
+  <link href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css" rel="stylesheet">
+  <link href="css/normalize.min.css" rel="stylesheet">
+  <link href="css/bemskel.min.css" rel="stylesheet">
+  <link href="css/style.min.css" rel="stylesheet">
+  <script src="js/notes.js"></script>
+</head>
+
+<body class="bg-dark text-light">
+  <div class="container">
+    <ul class="container__animation">
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+    <header class="header"></header>
+    <main class="main">
+      <div class="container">
+        <h1>Your notes</h1>
+        <input type="text" class="form-control" placeholder="Create title" maxlength="256" id="title" />
+        <button class="btn" id="creator">
+          Add more
+        </button>
+        <ul class="list-group" id="list">
+        </ul>
+      </div>
+    </main>
+    <footed class="footer"></footed>
+  </div>
+  <script>
+    window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
+    ga('create', 'UA-XXXXX-Y', 'auto'); ga('set', 'anonymizeIp', true); ga('set', 'transport', 'beacon'); ga('send', 'pageview')
+  </script>
+  <script src="https://www.google-analytics.com/analytics.js" async></script>
+</body>
+</html>
