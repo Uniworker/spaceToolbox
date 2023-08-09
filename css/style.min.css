@@ -273,27 +273,32 @@ textarea {
 }
 .main__tools {
   position: relative;
-  inset: 0;
+  top: -20px;
+  left: -50%;
   list-style: none;
   height: 100%;
   width: 100%;
 }
 .main__tools li {
   position: absolute;
-  left: -78px;
-  transform: rotate(-360deg);
-  transition: all 0.8s ease-in-out;
+  transform: rotate(360deg);
+  transition: all 0.5s ease-in-out;
 }
 .main__tools a {
+  border-radius: 50%;
   color: rgb(255, 255, 255);
   cursor: pointer;
-  transition: all 0.8s ease-in-out;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.5s ease-in-out;
 }
 .main__tools a:hover {
+  border: 1px solid #ecc513;
   color: #ecc513;
 }
 .main__tools span:before {
-  font-size: 2.5rem;
+  font-size: 3rem;
 }
 
 .footer {
@@ -329,13 +334,14 @@ textarea {
   background: #ecc513;
 }
 
+/*
 .--open ul li a {
-  color: rgba(0, 0, 0, 0.4);
+  color: rgba(0, 0, 0, .4);
   font-size: 48px;
   height: 128px;
   width: 128px;
   margin-left: -75px;
-  box-shadow: 0 0 8px rgba(255, 255, 255, 0.8), 0 0 16px rgba(255, 255, 255, 0.8);
+  box-shadow: 0 0 8px rgba(255, 255, 255, .8), 0 0 16px rgba(255, 255, 255, .8);
 }
 
 .--open ul li a:hover {
@@ -343,7 +349,7 @@ textarea {
   background: #0671af;
   box-shadow: 0 0 8px #0671af, 0 0 16px #0671af;
 }
-
+*/
 .--closed:hover span,
 .--closed:hover span::before,
 .--closed:hover span::after {

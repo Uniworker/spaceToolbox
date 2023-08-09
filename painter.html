@@ -30,22 +30,24 @@
 
 <body>
   <div class="container flex-grid">
-    <section class="picker">
-      <button data-color="black"></button>
-      <button data-color="red"></button>
-      <button data-color="green"></button>
-      <button data-color="blue"></button>
-      <button data-color="orange"></button>
-      <button data-color="magenta"></button>
-    </section>
-    <section class="field">
-      <canvas id="canvas" height="540" width="960"></canvas>
-    </section>
-    <section class="taskbar">
-      <input id="magnifier" type="range" value="4" min="1" max="7">
-      <span id="range-output"></span>
-      <button id="cleaner">Clean</button>
-    </section>
+    <div class="container__inner">
+      <section class="picker">
+        <button data-color="black"></button>
+        <button data-color="red"></button>
+        <button data-color="green"></button>
+        <button data-color="blue"></button>
+        <button data-color="orange"></button>
+        <button data-color="magenta"></button>
+      </section>
+      <section class="field">
+        <canvas id="canvas" height="540" width="960"></canvas>
+      </section>
+      <section class="taskbar">
+        <input id="magnifier" type="range" value="4" min="1" max="7">
+        <span id="range-output"></span>
+        <button id="cleaner">Clean</button>
+      </section>
+    </div>
   </div>
   <script>
     window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;

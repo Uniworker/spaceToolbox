@@ -288,26 +288,31 @@ textarea {
 
   &__tools {
     position: relative;
-    inset: 0;
+    top: -20px;
+    left: -50%;
     list-style: none;
     height: 100%;
     width: 100%;
     li {
       position: absolute;
-      left: -78px;
-      transform: rotate(-360deg);
-      transition: all .8s ease-in-out
+      transform: rotate(360deg);
+      transition: all .5s ease-in-out
     }
     a {
+      border-radius: 50%;
       color: rgb(255, 255, 255);
       cursor: pointer;
-      transition: all .8s ease-in-out
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: all .5s ease-in-out
     }
     a:hover {
+      border: 1px solid #ecc513;
       color: #ecc513
     }
     span:before {
-      font-size: 2.5rem;
+      font-size: 3rem;
     }
   }
 }
@@ -347,7 +352,7 @@ textarea {
 .--open:hover span::after {
   background: #ecc513;
 }
-
+/*
 .--open ul li a {
   color: rgba(0, 0, 0, .4);
   font-size: 48px;
@@ -362,7 +367,7 @@ textarea {
   background: #0671af;
   box-shadow: 0 0 8px #0671af, 0 0 16px #0671af;
 }
-
+*/
 .--closed:hover span,
 .--closed:hover span::before,
 .--closed:hover span::after {
