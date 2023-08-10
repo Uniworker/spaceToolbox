@@ -163,6 +163,7 @@ textarea {
 }
 .container__inner {
   flex-direction: column;
+  justify-content: center;
   align-items: center;
 }
 
@@ -217,7 +218,7 @@ textarea {
 
 .header {
   align-items: center;
-  min-height: 10vh;
+  min-height: 5vh;
 }
 .header__title {
   color: #505050;
@@ -229,6 +230,38 @@ textarea {
 .main {
   align-items: center;
   min-height: 80vh;
+}
+.main__wrapper {
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+}
+.main__wrapper input, .main__wrapper button {
+  margin: 0 auto;
+  min-width: 700px;
+}
+.main__message {
+  color: #505050;
+  font-size: 2.2rem;
+  text-align: center;
+}
+.main__list {
+  list-style: none;
+  margin: 0 auto;
+  width: 100%;
+}
+.main__list li {
+  align-items: center;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 0.2rem;
+  padding: 0.5rem 1rem;
+}
+.main__list li span:last-child {
+  display: flex;
+  justify-content: flex-end;
+}
+.main__list li span:last-child span {
+  margin-bottom: 0;
 }
 .main__menu {
   position: relative;
@@ -334,22 +367,6 @@ textarea {
   background: #ecc513;
 }
 
-/*
-.--open ul li a {
-  color: rgba(0, 0, 0, .4);
-  font-size: 48px;
-  height: 128px;
-  width: 128px;
-  margin-left: -75px;
-  box-shadow: 0 0 8px rgba(255, 255, 255, .8), 0 0 16px rgba(255, 255, 255, .8);
-}
-
-.--open ul li a:hover {
-  color: #ecc513;
-  background: #0671af;
-  box-shadow: 0 0 8px #0671af, 0 0 16px #0671af;
-}
-*/
 .--closed:hover span,
 .--closed:hover span::before,
 .--closed:hover span::after {
@@ -360,37 +377,35 @@ textarea {
   color: #ea1a1a;
 }
 
-*,
-*::after,
-*::before {
-  box-sizing: border-box;
+.picker {
+  background-color: rgba(255, 255, 255, 0.2);
+  margin: 0 auto;
+  width: 47%;
 }
-
-.picker button,
-.picker a {
+.picker a, .picker button {
   border: none;
   border-radius: 50%;
   cursor: pointer;
   display: inline-block;
+  margin: 1rem;
   width: 48px;
   height: 48px;
 }
 
-.taskbar button,
-.taskbar a {
-  background-color: #ccc;
-  border: 1px solid #b3d4fc;
-  cursor: pointer;
-  font-size: 16px;
-  display: inline-block;
-  text-transform: uppercase;
-  width: 96px;
-  height: 32px;
+.taskbar {
+  margin: 0 auto;
+  width: 47%;
 }
-
-.picker button:not(:first-child),
-.picker a:not(:first-child) {
-  margin-left: 48px;
+.taskbar a, .taskbar button {
+  background-color: #ccc;
+  border: 1px solid #ecc513;
+  cursor: pointer;
+  font-size: 1.2rem;
+  display: inline-block;
+  margin: 1rem;
+  text-transform: uppercase;
+  width: 50%;
+  height: 32px;
 }
 
 .picker button[data-color=black] {
@@ -412,18 +427,6 @@ textarea {
   background: magenta;
 }
 
-@media screen and (min-width: 320px) {
-  .picker button:not(:first-child),
-  .picker a:not(:first-child) {
-    margin-left: 16px;
-  }
-}
-@media screen and (min-width: 768px) {
-  .picker button:not(:first-child),
-  .picker a:not(:first-child) {
-    margin-left: 32px;
-  }
-}
 #magnifier {
   -webkit-appearance: none;
   -moz-appearance: none;

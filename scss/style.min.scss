@@ -16,7 +16,6 @@
     opacity: 0.8;
   }
 }
-
 @keyframes forward {
   0% {
     filter: blur(0);
@@ -28,7 +27,6 @@
     transform: scale(1.2)
   }
 }
-
 @keyframes pulse {
   0% {
     transform: scale(1)
@@ -46,33 +44,27 @@
     transform: scale(1)
   }
 }
-
 ::-webkit-scrollbar {
   display: none
 }
-
 ::-moz-selection {
   background: #b3d4fc;
   text-shadow: none
 }
-
 ::selection {
   background: #b3d4fc;
   text-shadow: none
 }
-
 body {
   margin: 0;
   min-width: 320px;
   overflow: hidden
 }
-
 a {
   text-decoration: none;
   color: inherit;
   cursor: pointer
 }
-
 button {
   background-color: transparent;
   color: inherit;
@@ -80,17 +72,14 @@ button {
   padding: 0;
   cursor: pointer
 }
-
 figure {
   margin: 0;
 }
-
 input::-moz-focus-inner {
   border: 0;
   padding: 0;
   margin: 0
 }
-
 h1,
 h2,
 h3,
@@ -101,15 +90,12 @@ h6 {
   font-size: inherit;
   font-weight: inherit
 }
-
 p {
   margin: 0;
 }
-
 cite {
   font-style: normal;
 }
-
 audio,
 canvas,
 iframe,
@@ -118,16 +104,13 @@ svg,
 video {
   vertical-align: middle;
 }
-
 textarea {
   resize: vertical;
 }
-
 .hidden,
 [hidden] {
   display: none !important;
 }
-
 .sr-only {
   border: 0;
   clip: rect(0, 0, 0, 0);
@@ -140,7 +123,6 @@ textarea {
   width: 1px;
   /* 1 */
 }
-
 .sr-only.focusable:active,
 .sr-only.focusable:focus {
   clip: auto;
@@ -151,21 +133,17 @@ textarea {
   white-space: inherit;
   width: auto;
 }
-
 .invisible {
   visibility: hidden;
 }
-
 .clearfix::before,
 .clearfix::after {
   content: " ";
   display: table;
 }
-
 .clearfix::after {
   clear: both;
 }
-
 .container {
   align-items: center;
   justify-content: center;
@@ -176,10 +154,10 @@ textarea {
   overflow: hidden;
   &__inner {
     flex-direction: column;
+    justify-content: center;
     align-items: center;
   }
 }
-
 .container .star {
   position: absolute;
   inset: 0;
@@ -188,50 +166,41 @@ textarea {
   pointer-events: none;
   animation: space 8s ease-in-out infinite, forward 16s linear infinite
 }
-
 .container .star:first-child {
   animation-delay: 0s;
   background: url('../img/star1.png')
 }
-
 .container .star:nth-child(1) {
   animation-delay: -1s;
   background: url('../img/star2.png')
 }
-
 .container .star:nth-child(2) {
   animation-delay: -2s;
   background: url('../img/star3.png')
 }
-
 .container .star:nth-child(3) {
   animation-delay: -3s;
   background: url('../img/star4.png')
 }
-
 .container .star:nth-child(4) {
   animation-delay: -4s;
   background: url('../img/star5.png')
 }
-
 .container .star:nth-child(5) {
   animation-delay: -5s;
   background: url('../img/star6.png')
 }
-
 .container .star:nth-child(6) {
   animation-delay: -6s;
   background: url('../img/star7.png')
 }
-
 .container .star:last-child {
   animation-delay: -7s;
   background: url('../img/star8.png')
 }
-
 .header {
   align-items: center;
-  min-height: 10vh;
+  min-height: 5vh;
   &__title {
     color: #505050;
     letter-spacing: 1px;
@@ -239,16 +208,44 @@ textarea {
     text-shadow: 0 0 3px rgb(100, 100, 100);
   }
 }
-
 .main {
   align-items: center;
   min-height: 80vh;
+  &__wrapper {
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+    input, button {
+      margin: 0 auto;
+      min-width: 700px;
+    }
+  }
+  &__message {
+    color: #505050;
+    font-size: 2.2rem;
+    text-align: center;
+  }
+  &__list {
+    list-style: none;
+    margin: 0 auto;
+    width: 100%;
+    li {
+      align-items: center;
+      background: rgba(255, 255, 255, .8);
+      border-radius: 0.2rem;
+      padding: 0.5rem 1rem;
+      span:last-child {
+        display: flex;
+        justify-content: flex-end;
+        span {margin-bottom: 0;}
+      }
+    }
+  }
   &__menu {
     position: relative;
     height: 128px;
     width: 128px
   }
-
   &__button {
     animation: pulse 16s ease-in-out infinite;
     background: rgba(0, 0, 0, .4);
@@ -285,7 +282,6 @@ textarea {
       box-shadow: 0 0 8px #ecc513, 0 0 16px #ecc513, 0 0 8px #ecc513 inset;
     }
   }
-
   &__tools {
     position: relative;
     top: -20px;
@@ -316,7 +312,6 @@ textarea {
     }
   }
 }
-
 .footer {
   align-items: center;
   min-height: 5vh;
@@ -335,39 +330,19 @@ textarea {
       }
   }
 }
-
 .--open span {
   background: transparent
 }
-
 .--open span::before {
   transform: rotate(135deg)
 }
-
 .--open span::after {
   transform: rotate(-135deg)
 }
-
 .--open:hover span::before,
 .--open:hover span::after {
   background: #ecc513;
 }
-/*
-.--open ul li a {
-  color: rgba(0, 0, 0, .4);
-  font-size: 48px;
-  height: 128px;
-  width: 128px;
-  margin-left: -75px;
-  box-shadow: 0 0 8px rgba(255, 255, 255, .8), 0 0 16px rgba(255, 255, 255, .8);
-}
-
-.--open ul li a:hover {
-  color: #ecc513;
-  background: #0671af;
-  box-shadow: 0 0 8px #0671af, 0 0 16px #0671af;
-}
-*/
 .--closed:hover span,
 .--closed:hover span::before,
 .--closed:hover span::after {
@@ -376,39 +351,36 @@ textarea {
 .--active::-webkit-input-placeholder {
   color: #ea1a1a;
 }
-*,
-*::after,
-*::before {
-  box-sizing: border-box
-}
 
-.picker button,
-.picker a {
-  border: none;
-  border-radius: 50%;
-  cursor: pointer;
-  display: inline-block;
-  width: 48px;
-  height: 48px
+.picker{
+  background-color: rgba(255, 255, 255, .2);
+  margin: 0 auto;
+  width: 47%;
+  a, button {
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: inline-block;
+    margin: 1rem;
+    width: 48px;
+    height: 48px
+  }
 }
-
-.taskbar button,
-.taskbar a {
-  background-color: #ccc;
-  border: 1px solid #b3d4fc;
-  cursor: pointer;
-  font-size: 16px;
-  display: inline-block;
-  text-transform: uppercase;
-  width: 96px;
-  height: 32px;
+.taskbar {
+  margin: 0 auto;
+  width: 47%;
+  a, button {
+    background-color: #ccc;
+    border: 1px solid #ecc513;
+    cursor: pointer;
+    font-size: 1.2rem;
+    display: inline-block;
+    margin: 1rem;
+    text-transform: uppercase;
+    width: 50%;
+    height: 32px;
+  }
 }
-
-.picker button:not(:first-child),
-.picker a:not(:first-child) {
-  margin-left: 48px
-}
-
 .picker {
   button[data-color='black'] {
       background: black;
@@ -433,22 +405,6 @@ textarea {
     button[data-color='magenta'] {
       background: magenta;
     }
-}
-
-@media screen and (min-width:320px) {
-
-  .picker button:not(:first-child),
-  .picker a:not(:first-child) {
-    margin-left: 16px
-  }
-}
-
-@media screen and (min-width:768px) {
-
-  .picker button:not(:first-child),
-  .picker a:not(:first-child) {
-    margin-left: 32px
-  }
 }
 
 #magnifier {

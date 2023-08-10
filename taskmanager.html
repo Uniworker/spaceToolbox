@@ -29,27 +29,36 @@
 
 <body class="bg-dark text-light">
   <div class="container">
-    <ul class="container__animation">
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-    </ul>
-    <header class="header"></header>
-    <main class="main">
-      <div class="container">
-        <h1>Your notes</h1>
-        <input type="text" class="form-control" placeholder="Create title" maxlength="256" id="title" />
-        <button class="btn" id="creator">
-          Add more
-        </button>
-        <ul class="list-group" id="list">
-        </ul>
-      </div>
-    </main>
-    <footed class="footer"></footed>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="container__inner flex-grid">
+      <header class="header flex-grid">
+        <h1 class="header__title"><a href="#" title="Back to homepage">Space ✨ Toolbox</a></h1>
+      </header>
+      <main class="main">
+        <div class="main__wrapper flex-grid">
+          <h2 class="main__message">What do you think?</h2>
+          <input type="text" class="main__field" placeholder="Create title" maxlength="256" id="title" />
+          <button class="main__btn btn btn-outline--primary" id="creator">
+            Add task
+          </button>
+          <ul class="main__list" id="list">
+          </ul>
+          <div hidden></div>
+        </div>
+      </main>
+      <footer class="footer flex-grid">
+        <p class="footer__hint"><span>©2023 | Created by </span><a
+            href="https://www.youtube.com/channel/UC-ii73NUvqnJhGpieMlMstQ" target="_blank" title="Follow me">UNIWORKER</a>
+        </p>
+      </footer>
+    </div>
   </div>
   <script>
     window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
