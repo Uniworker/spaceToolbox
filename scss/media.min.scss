@@ -1,0 +1,59 @@
+@media screen and (max-width: 768px) {
+  .counter {
+    top: 12%;
+    left: 82%;
+  }
+  .main {
+    &__menu {
+        height: 96px;
+        width: 96px
+      }
+      &__button {
+        height: 96px;
+        width: 96px;
+        span,
+        span::before,
+        span::after {
+          height: 2px;
+          width: 36px;
+          transform: translate(70%, 43px);
+        }
+        span::before {
+          transform: translateY(-12px)
+        }
+        span::after {
+          transform: translateY(12px);
+        }
+      }
+      &__tools {
+        top: -20px;
+        left: -50%;
+        span:before {
+          font-size: 2.5rem;
+        }
+      }
+    &__wrapper {
+      gap: 1.5rem;
+    }
+    &__message {
+      margin-top: 1rem;
+    }
+    &__field,
+    &__btn {
+      min-width: 90vw;
+    }
+  }
+  .picker {
+     width: 100%;
+     a, button {
+      width: 24px;
+      height: 24px
+  }
+  }
+  .taskbar {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 100%;
+  }
+}
