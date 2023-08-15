@@ -3,8 +3,8 @@ window.onload = function () {
   const text = document.getElementById("title")
   const counter = document.createElement('span')
   counter.classList.add('counter')
-  counter.style.cssText = 'position:absolute;top:11%;left:70%;color:gray;font-size:14px;z-index:3'
-  document.body.append(counter)
+  counter.style.cssText = 'position:absolute;top:100px;left:82%;color:gray;font-size:14px;z-index:3'
+  document.getElementById('creator').before(counter)
   text.addEventListener('input', () => {
     counter.textContent = `${text.value.length}/${text.maxLength}`
   })

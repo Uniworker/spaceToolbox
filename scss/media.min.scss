@@ -1,14 +1,11 @@
 @media screen and (max-width: 768px) {
-  .counter {
-    top: 12%;
-    left: 82%;
-  }
   .main {
     &__menu {
         height: 96px;
         width: 96px
       }
       &__button {
+        -webkit-tap-highlight-color: transparent;
         height: 96px;
         width: 96px;
         span,
@@ -26,6 +23,7 @@
         }
       }
       &__tools {
+        -webkit-tap-highlight-color: transparent;
         top: -20px;
         left: -50%;
         span:before {
@@ -34,9 +32,6 @@
       }
     &__wrapper {
       gap: 1.5rem;
-    }
-    &__message {
-      margin-top: 1rem;
     }
     &__field,
     &__btn {

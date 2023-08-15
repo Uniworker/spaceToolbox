@@ -60,6 +60,26 @@ body {
   min-width: 320px;
   overflow: hidden
 }
+body.hovered {
+  .main__button:hover {
+    border-color: #ecc513;
+    box-shadow: 0 0 8px #ecc513, 0 0 16px #ecc513, 0 0 8px #ecc513 inset;
+  }
+  .main__tools a:hover {
+    border: 1px solid #ecc513;
+    color: #ecc513
+  }
+    .--open:hover span::before,
+    .--open:hover span::after {
+      background: #ecc513;
+    }
+  
+    .--closed:hover span,
+    .--closed:hover span::before,
+    .--closed:hover span::after {
+      background: #ecc513;
+    }
+}
 a {
   text-decoration: none;
   color: inherit;
@@ -206,6 +226,7 @@ textarea {
     letter-spacing: 1px;
     text-transform: uppercase;
     text-shadow: 0 0 3px rgb(100, 100, 100);
+    user-select: none;
   }
 }
 .main {
@@ -219,6 +240,7 @@ textarea {
   &__message {
     color: #505050;
     font-size: 2.2rem;
+    margin-top: 1rem;
     text-align: center;
   }
     &__field,
@@ -278,10 +300,6 @@ textarea {
     span::after {
       transform: translateY(15px);
     }
-    &:hover {
-      border-color: #ecc513;
-      box-shadow: 0 0 8px #ecc513, 0 0 16px #ecc513, 0 0 8px #ecc513 inset;
-    }
   }
   &__tools {
     position: relative;
@@ -303,10 +321,6 @@ textarea {
       justify-content: center;
       align-items: center;
       transition: all .5s ease-in-out
-    }
-    a:hover {
-      border: 1px solid #ecc513;
-      color: #ecc513
     }
     span:before {
       font-size: 3rem;
@@ -339,15 +353,6 @@ textarea {
 }
 .--open span::after {
   transform: rotate(-135deg) !important
-}
-.--open:hover span::before,
-.--open:hover span::after {
-  background: #ecc513;
-}
-.--closed:hover span,
-.--closed:hover span::before,
-.--closed:hover span::after {
-  background: #ecc513;
 }
 .--active::-webkit-input-placeholder {
   color: #ea1a1a;

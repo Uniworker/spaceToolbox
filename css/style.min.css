@@ -53,6 +53,24 @@ body {
   overflow: hidden;
 }
 
+body.hovered .main__button:hover {
+  border-color: #ecc513;
+  box-shadow: 0 0 8px #ecc513, 0 0 16px #ecc513, 0 0 8px #ecc513 inset;
+}
+body.hovered .main__tools a:hover {
+  border: 1px solid #ecc513;
+  color: #ecc513;
+}
+body.hovered .--open:hover span::before,
+body.hovered .--open:hover span::after {
+  background: #ecc513;
+}
+body.hovered .--closed:hover span,
+body.hovered .--closed:hover span::before,
+body.hovered .--closed:hover span::after {
+  background: #ecc513;
+}
+
 a {
   text-decoration: none;
   color: inherit;
@@ -225,6 +243,9 @@ textarea {
   letter-spacing: 1px;
   text-transform: uppercase;
   text-shadow: 0 0 3px rgb(100, 100, 100);
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
 }
 
 .main {
@@ -239,6 +260,7 @@ textarea {
 .main__message {
   color: #505050;
   font-size: 2.2rem;
+  margin-top: 1rem;
   text-align: center;
 }
 .main__field, .main__btn {
@@ -300,10 +322,6 @@ textarea {
 .main__button span::after {
   transform: translateY(15px);
 }
-.main__button:hover {
-  border-color: #ecc513;
-  box-shadow: 0 0 8px #ecc513, 0 0 16px #ecc513, 0 0 8px #ecc513 inset;
-}
 .main__tools {
   position: relative;
   top: -20px;
@@ -325,10 +343,6 @@ textarea {
   justify-content: center;
   align-items: center;
   transition: all 0.5s ease-in-out;
-}
-.main__tools a:hover {
-  border: 1px solid #ecc513;
-  color: #ecc513;
 }
 .main__tools span:before {
   font-size: 3rem;
@@ -360,17 +374,6 @@ textarea {
 
 .--open span::after {
   transform: rotate(-135deg) !important;
-}
-
-.--open:hover span::before,
-.--open:hover span::after {
-  background: #ecc513;
-}
-
-.--closed:hover span,
-.--closed:hover span::before,
-.--closed:hover span::after {
-  background: #ecc513;
 }
 
 .--active::-webkit-input-placeholder {

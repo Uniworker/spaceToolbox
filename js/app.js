@@ -1,10 +1,21 @@
 window.onload = function() {
+  let lastTouchTime = 0
   let viewport = window.innerWidth || document.documentElement.clientWidth
   const audio = document.getElementById('sound')
   const menu = document.getElementById('menu')
   const tools = document.querySelectorAll('#tools li')
 
+  document.addEventListener('touchstart', (e) => {
+    lastTouchTime = new Date()
+    document.body.classList.remove('hovered')
+  }, true)
+  document.addEventListener('mousemove', (e)=>{
+    if (new Date() - lastTouchTime < 500) return
+    document.body.classList.add('hovered')
+  }, true)
+
   audio.volume = 0.2;
+  
   menu.addEventListener('click', (e)=>{
     e.currentTarget.classList.toggle('--closed')
     e.currentTarget.classList.toggle('--open')
