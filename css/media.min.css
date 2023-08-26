@@ -1,3 +1,47 @@
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+  .container .star {
+    animation: space 8s ease-in-out infinite, forward 16s linear infinite;
+    background: none;
+  }
+  .container .star:first-child {
+    animation-delay: 0s;
+    background: url("../img/star1.png");
+  }
+  .container .star:nth-child(1) {
+    animation-delay: -1s;
+    background: url("../img/star2.png");
+  }
+  .container .star:nth-child(2) {
+    animation-delay: -2s;
+    background: url("../img/star3.png");
+  }
+  .container .star:nth-child(3) {
+    animation-delay: -3s;
+    background: url("../img/star4.png");
+  }
+  .container .star:nth-child(4) {
+    animation-delay: -4s;
+    background: url("../img/star5.png");
+  }
+  .container .star:nth-child(5) {
+    animation-delay: -5s;
+    background: url("../img/star6.png");
+  }
+  .container .star:nth-child(6) {
+    animation-delay: -6s;
+    background: url("../img/star7.png");
+  }
+  .container .star:last-child {
+    animation-delay: -7s;
+    background: url("../img/star8.png");
+  }
+  .main__button {
+    animation: pulse 16s ease-in-out infinite;
+  }
+}
 @media screen and (max-width: 768px) {
   .main__menu {
     height: 96px;
@@ -33,7 +77,7 @@
     gap: 1.5rem;
   }
   .main__field, .main__btn {
-    min-width: 90vw;
+    min-width: 90dvw;
   }
   .picker {
     width: 100%;
