@@ -4,8 +4,8 @@ window.onload = function () {
   var prevData = '';
   var text = document.getElementById("title");
   var counter = document.createElement('span');
-  counter.classList.add('counter');
-  counter.style.cssText = 'position:absolute;top:100px;left:82%;color:gray;font-size:14px;z-index:3';
+  counter.classList.add('main__counter');
+  counter.style.cssText = 'position:absolute;top:80px;left:70%;color:gray;font-size:14px;z-index:3';
   document.getElementById('creator').before(counter);
   text.addEventListener('input', function () {
     counter.textContent = "".concat(text.value.length, "/").concat(text.maxLength);
