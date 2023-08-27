@@ -174,7 +174,7 @@ textarea {
   align-items: center;
   justify-content: center;
   background: radial-gradient(circle, #111 20%, #000 80%) no-repeat;
-  height: 100dvh;
+  height: 100vh;
   max-width: 100%;
   width: 100%;
   overflow: hidden;
@@ -210,7 +210,7 @@ textarea {
 
 .main {
   align-items: center;
-  min-height: 80dvh;
+  min-height: 80vh;
 }
 .main__wrapper {
   flex-direction: column;
