@@ -169,7 +169,6 @@ textarea {
   justify-content: center;
   background: radial-gradient(circle, #111 20%, #000 80%) no-repeat;
   height: 100dvh;
-  max-width: 100%;
   width: 100%;
   overflow: hidden;
   &__inner {
@@ -183,7 +182,7 @@ textarea {
     position: absolute;
     inset: 0;
     background: url('../img/star1.png') no-repeat center;
-    background-size: 100% 100%;
+    background-size: cover;
     height: 100%;
     width: 100%;
     pointer-events: none;
