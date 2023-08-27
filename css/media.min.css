@@ -43,9 +43,6 @@
   }
 }
 @media screen and (max-width: 768px) {
-  .container .star {
-    background-size: auto !important;
-  }
   .main__menu {
     height: 96px;
     width: 96px;
