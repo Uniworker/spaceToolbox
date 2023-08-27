@@ -169,6 +169,7 @@ textarea {
   justify-content: center;
   background: radial-gradient(circle, #111 20%, #000 80%) no-repeat;
   height: 100dvh;
+  max-width: 100%;
   width: 100%;
   overflow: hidden;
   &__inner {
