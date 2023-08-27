@@ -189,6 +189,7 @@ textarea {
   position: absolute;
   inset: 0;
   background: url("../img/star1.png") no-repeat center;
+  background-size: cover;
   height: 100%;
   width: 100%;
   pointer-events: none;
@@ -209,7 +210,7 @@ textarea {
 
 .main {
   align-items: center;
-  height: 80dvh;
+  min-height: 80dvh;
 }
 .main__wrapper {
   flex-direction: column;

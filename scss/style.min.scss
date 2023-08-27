@@ -178,13 +178,16 @@ textarea {
     align-items: center;
   }
 }
-.container .star {
-  position: absolute;
-  inset: 0;
-  background: url('../img/star1.png') no-repeat center;
-  height: 100%;
-  width: 100%;
-  pointer-events: none;
+.container {
+  .star {
+    position: absolute;
+    inset: 0;
+    background: url('../img/star1.png') no-repeat center;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+    pointer-events: none;
+  }
 }
 .header {
   align-items: center;
@@ -198,7 +201,7 @@ textarea {
 }
 .main {
   align-items: center;
-  height: 80dvh;
+  min-height: 80dvh;
   &__wrapper {
     flex-direction: column;
     justify-content: center;
