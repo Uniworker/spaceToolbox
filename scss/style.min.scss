@@ -168,7 +168,7 @@ textarea {
   align-items: center;
   justify-content: center;
   background: radial-gradient(circle, #111 20%, #000 80%) no-repeat;
-  height: 100vh;
+  height: 100dvh;
   max-width: 100%;
   width: 100%;
   overflow: hidden;
@@ -182,7 +182,6 @@ textarea {
   position: absolute;
   inset: 0;
   background: url('../img/star1.png') no-repeat center;
-  background-size: cover;
   height: 100%;
   width: 100%;
   pointer-events: none;
@@ -199,7 +198,7 @@ textarea {
 }
 .main {
   align-items: center;
-  min-height: 80vh;
+  height: 80dvh;
   &__wrapper {
     flex-direction: column;
     justify-content: center;
