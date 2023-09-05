@@ -36,14 +36,14 @@ window.onload = function (e) {
   viewport = document.documentElement.clientWidth || window.innerWidth;
   canvas = document.getElementById('canvas');
   if (viewport > 320 && viewport <= 767) {
-    canvas.height = 544;
-    canvas.width = 306;
+    canvas.height = window.innerHeight / 3 * 2;
+    canvas.width = window.innerWidth - 8;
   } else if (viewport > 767 && viewport <= 1023) {
-    canvas.height = 720;
-    canvas.width = 720;
+    canvas.height = window.innerHeight / 6 * 4;
+    canvas.width = window.innerWidth - 16;
   } else if (viewport > 1024) {
-    canvas.height = 540;
-    canvas.width = 960;
+    canvas.height = window.innerHeight / 9 * 6;
+    canvas.width = window.innerWidth -24;
   }
   painter = canvas.getContext('2d');
   painter.lineWidth = document.getElementById('magnifier').value;
