@@ -58,6 +58,7 @@ window.onload = function () {
     if (e.target.classList.contains('main__btn')) {
       if (text.value !== '' && text.value !== prevData) {
         notes.push(new Note(document.getElementById('list'), text.value, notes.length))
+        //for (let note of notes) localStorage.setItem('note', JSON.stringify(note))
         prevData = text.value;
         if (text.hasAttribute('maxlength')) text.value = text.value.slice(0, text.maxLength);
         inputHandler('', 'inherit', 'Create next title');
@@ -69,6 +70,8 @@ window.onload = function () {
     if (e.target.classList.contains('btn--success')) {
       let rootTarget = e.target.parentNode.parentElement
       notes[Number(rootTarget.dataset.index)].edit(e.target, rootTarget.firstElementChild, true)
+      //let edited = localStorage.getItem('note')
+      //const note = JSON.parse(edited)
     } else {
       if (e.target.classList.contains('btn--warning')) {
         let rootTarget = e.target.parentNode.parentElement
@@ -77,10 +80,24 @@ window.onload = function () {
     }
     if (e.target.classList.contains('btn--danger')) {
       let rootTarget = e.target.parentNode.parentElement
-      notes.splice(Number(rootTarget.dataset.index), 1)
-      notes[rootTarget.dataset.index].terminate(rootTarget)
+      const deleted = notes.splice(Number(rootTarget.dataset.index), 1)
+      deleted[0].terminate(e.target.parentNode.parentElement)
+      //localStorage.removeItem('note')
     }
   });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Enter') {
+      if (text.value !== '' && text.value !== prevData) {
+        notes.push(new Note(document.getElementById('list'), text.value, notes.length))
+        prevData = text.value;
+        if (text.hasAttribute('maxlength')) text.value = text.value.slice(0, text.maxLength);
+        inputHandler('', 'inherit', 'Create next title');
+      } else {
+        inputHandler('', '2px solid red', 'Put some text here');
+        text.classList.add('active');
+      }
+    }
+  })
   function inputHandler(data, view, hint) {
     text.value = data;
     text.style.border = view;
