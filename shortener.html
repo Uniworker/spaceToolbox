@@ -1,18 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="utf-8">
   <meta http-equiv="content-language" content="en">
   <meta http-equiv="x-ua-compatible" content="IE=edge">
-  <title>Task manager</title>
+  <title>Link shortener</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
   <meta name="author" content="Uniworker">
-  <meta name="keywords" content="webtools, online, task, notepad, manager">
-  <meta name="description" content="Create and save tasks to get it done">
+  <meta name="keywords" content="webtools, online, link, handler, shortener">
+  <meta name="description" content="Make any link of yours prettier">
   <meta name="theme-color" content="#0a0a0a">
   <meta property="og:locale" content="en">
-  <meta property="og:title" content="Task manager">
+  <meta property="og:title" content="Link shortener">
   <meta property="og:type" content="online service">
   <meta property="og:url" content="https://uniworker.github.io/spaceToolbox/">
   <meta property="og:image" content="tile-wide.png">
@@ -25,10 +24,9 @@
   <link href="css/bemskel.min.css" rel="stylesheet">
   <link href="css/style.min.css" rel="stylesheet">
   <link href="css/media.min.css" rel="stylesheet">
-  <script src="js/notes.js"></script>
+  <script src="js/short.js"></script>
 </head>
-
-<body class="bg-dark text-light">
+<body>
   <div class="container">
     <div class="star"></div>
     <div class="star"></div>
@@ -44,14 +42,18 @@
       </header>
       <main class="main">
         <div class="main__wrapper flex-grid">
-          <h2 class="main__message">Create your tasks easily</h2>
-          <form action="" name="sender" class="main__form flex-grid">
-            <input type="text" class="main__field" placeholder="What do you think about?" maxlength="256" id="title" />
-            <button class="main__btn btn btn-outline--primary" id="creator">Add task</button>
+          <h2 class="main__message">Make your links prettier</h2>
+          <form action="" name="shortener" class="main__form flex-grid">
+            <input type="text" class="main__field" id="longlink" placeholder="Do you have any link?" />
+            <button class="main__btn btn btn-outline--primary" id="shortener">Short link</button>
           </form>
           <ul class="main__list" id="list">
+            <li class="list__link flex-grid">
+              <span class="link__long">https://www.pexels.com/photo/young-man-sitting-in-a-car-on-a-night-street-18073372/</span>
+              <span class="link__short">https://sho/link/j8t5</span>
+              <button class="link__btn btn btn--secondary" id="copy">Copy</button>
+            </li>
           </ul>
-          <div hidden></div>
         </div>
       </main>
       <footer class="footer flex-grid">
@@ -61,10 +63,5 @@
       </footer>
     </div>
   </div>
-  <script>
-    window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
-    ga('create', 'UA-XXXXX-Y', 'auto'); ga('set', 'anonymizeIp', true); ga('set', 'transport', 'beacon'); ga('send', 'pageview')
-  </script>
-  <script src="https://www.google-analytics.com/analytics.js" async></script>
 </body>
 </html>

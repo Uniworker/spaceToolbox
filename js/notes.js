@@ -39,6 +39,9 @@ class Note {
 }
 
 window.onload = function () {
+  document.querySelector('form[name="sender"]').addEventListener('submit', function (e) {
+    e.preventDefault();
+  })
   var notes = [];
   var prevData = '';
   var text = document.getElementById("title");
@@ -58,7 +61,9 @@ window.onload = function () {
     if (e.target.classList.contains('main__btn')) {
       if (text.value !== '' && text.value !== prevData) {
         notes.push(new Note(document.getElementById('list'), text.value, notes.length))
-        //for (let note of notes) localStorage.setItem('note', JSON.stringify(note))
+        /*localStorage.setItem('note', JSON.stringify(notes[0]))
+        console.table(localStorage.getItem('note'))
+        debugger*/
         prevData = text.value;
         if (text.hasAttribute('maxlength')) text.value = text.value.slice(0, text.maxLength);
         inputHandler('', 'inherit', 'Create next title');
