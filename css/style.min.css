@@ -1,16 +1,16 @@
 @font-face {
-  font-family: "Space Grotesk", sans-serif;
+  font-family: "Space Grotesk";
   font-display: fallback;
   font-style: normal;
   font-weight: 400;
-  src: local("SpaceGrotesk-Regular"), url("fonts/SpaceGrotesk-Regular.woff") format("woff"), url("fonts/SpaceGrotesk-Regular.woff2") format("woff2");
+  src: local("SpaceGrotesk-Regular"), url("../fonts/SpaceGrotesk-Regular.woff") format("woff"), url("../fonts/SpaceGrotesk-Regular.woff2") format("woff2");
 }
 @font-face {
-  font-family: "Space Grotesk", sans-serif;
+  font-family: "Space Grotesk";
   font-display: fallback;
   font-style: normal;
   font-weight: bold;
-  src: local("SpaceGrotesk-Bold"), url("fonts/SpaceGrotesk-Bold.woff") format("woff"), url("fonts/SpaceGrotesk-Bold.woff2") format("woff2");
+  src: local("SpaceGrotesk-Bold"), url("../fonts/SpaceGrotesk-Bold.woff") format("woff"), url("../fonts/SpaceGrotesk-Bold.woff2") format("woff2");
 }
 @keyframes space {
   0%, 20%, 40%, 60%, 80% {
@@ -231,10 +231,9 @@ textarea {
   align-items: center;
   min-height: 80dvh;
 }
-.main__wrapper, .main__form {
+.main__wrapper {
   flex-direction: column;
   justify-content: center;
-  gap: 1rem;
   max-width: 700px;
 }
 .main__message {
@@ -244,7 +243,7 @@ textarea {
   text-align: center;
 }
 .main__field, .main__btn {
-  margin: 0 auto;
+  margin: 0.5rem auto;
   min-width: 700px;
 }
 .main__list {
@@ -266,6 +265,7 @@ textarea {
   margin-bottom: 0;
 }
 .main__list .list__link {
+  font-family: "Space Grotesk", sans-serif;
   align-items: center;
 }
 .main__list .list__link .link__long {

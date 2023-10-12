@@ -78,10 +78,14 @@
     left: 82% !important;
   }
   .main__wrapper {
-    gap: 1.5rem;
+    gap: 0.5rem;
+    max-width: 90vw;
   }
   .main__field, .main__btn {
     min-width: 90vw;
+  }
+  .main__list li {
+    flex-direction: column;
   }
   .picker {
     width: 100%;

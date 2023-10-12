@@ -39,7 +39,7 @@ class Note {
 }
 
 window.onload = function () {
-  document.querySelector('form[name="sender"]').addEventListener('submit', function (e) {
+  document.forms.sender.addEventListener('submit', function (e) {
     e.preventDefault();
   })
   var notes = [];
@@ -47,7 +47,7 @@ window.onload = function () {
   var text = document.getElementById("title");
   var counter = document.createElement('span');
   counter.classList.add('main__counter');
-  counter.style.cssText = 'position:absolute;top:80px;left:70%;color:gray;font-size:14px;z-index:3';
+  counter.style.cssText = 'position:absolute;top:88px;left:70%;color:gray;font-size:14px;z-index:3';
   document.getElementById('creator').before(counter);
   text.addEventListener('input', function () {
     counter.textContent = "".concat(text.value.length, "/").concat(text.maxLength);
