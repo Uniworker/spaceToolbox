@@ -84,6 +84,9 @@
   .main__field, .main__btn {
     min-width: 90vw;
   }
+  .main__error {
+    top: 16%;
+  }
   .main__list li {
     flex-direction: column;
   }
