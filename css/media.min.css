@@ -38,9 +38,6 @@
     animation-delay: -7s;
     background: url("../img/star8.png");
   }
-  .main__button {
-    animation: pulse 16s ease-in-out infinite;
-  }
 }
 @media screen and (max-width: 768px) {
   .main__menu {

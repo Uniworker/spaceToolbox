@@ -28,7 +28,7 @@ window.onload = function () {
       var distance = i * (360 / tools.length);
       if (e.currentTarget.classList.contains('--open')) {
         tools[i].firstChild.classList.remove('sr-only');
-        viewport > 767 ? tools[i].firstChild.style.cssText = 'height:64px;width:64px;margin-left:-200px;animation: pulse 16s ease-in-out infinite;' : tools[i].firstChild.style.cssText = 'height:64px;width:64px;margin-left:-150px;animation: pulse 16s ease-in-out infinite;';
+        viewport > 767 ? tools[i].firstChild.style.cssText = 'height:64px;width:64px;margin-left:-200px;' : tools[i].firstChild.style.cssText = 'height:64px;width:64px;margin-left:-150px;';
         setTrigger(tools[i], distance);
       } else {
         setTrigger(tools[i], '-360');

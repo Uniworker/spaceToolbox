@@ -30,21 +30,12 @@
     transform: scale(1.2);
   }
 }
-@keyframes pulse {
+@keyframes aurora {
   0% {
-    transform: scale(1);
-  }
-  25% {
-    transform: scale(0.9);
-  }
-  50% {
-    transform: scale(1);
-  }
-  75% {
-    transform: scale(1.1);
+    filter: hue-rotate(0deg);
   }
   100% {
-    transform: scale(1);
+    filter: hue-rotate(360deg);
   }
 }
 ::-webkit-scrollbar {
@@ -69,21 +60,17 @@ body {
 }
 
 body.hovered .main__button:hover {
+  animation: aurora 1.5s linear infinite;
   border-color: #ecc513;
-  box-shadow: 0 0 8px #ecc513, 0 0 16px #ecc513, 0 0 8px #ecc513 inset;
+  box-shadow: 0 0 8px #19f0da, 0 0 16px #fde82e, 0 0 8px #e702cd inset;
 }
 body.hovered .main__tools a:hover {
-  border: 1px solid #ecc513;
-  color: #ecc513;
+  animation: aurora 1.5s linear infinite;
+  border: 2px solid #ecc513;
 }
-body.hovered .--open:hover span::before,
-body.hovered .--open:hover span::after {
-  background: #ecc513;
-}
-body.hovered .--closed:hover span,
-body.hovered .--closed:hover span::before,
-body.hovered .--closed:hover span::after {
-  background: #ecc513;
+body.hovered .menu__item:hover {
+  animation: aurora 1.5s linear infinite;
+  background: linear-gradient(#19f0da, #fde82e, #e702cd);
 }
 
 a {
@@ -215,9 +202,11 @@ textarea {
 
 .header {
   align-items: center;
+  flex-direction: column;
 }
 .header__title {
   color: #505050;
+  font-size: 1.8rem;
   letter-spacing: 1px;
   margin-top: 1rem;
   text-transform: uppercase;
@@ -225,6 +214,30 @@ textarea {
   -webkit-user-select: none;
      -moz-user-select: none;
           user-select: none;
+}
+.header__menu .menu__wrapper {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 1.2rem;
+  list-style: none;
+  margin: 2rem 0 1rem 0;
+  text-transform: uppercase;
+}
+.header__menu .menu__item {
+  display: inline-block;
+  border: 2px solid transparent;
+  border-radius: 50%;
+}
+.header__menu .menu__item a {
+  display: block;
+  cursor: pointer;
+  background: #0a0a0a;
+  border-radius: 50%;
+  letter-spacing: 1px;
+  padding: 0.5rem 1.5rem;
+  text-shadow: 0 0 3px rgba(255, 255, 255, 0.8);
+}
+.header__menu .menu__item:first-child {
+  margin-right: 1rem;
 }
 
 .main {
