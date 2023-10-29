@@ -87,9 +87,12 @@
       top: 16%;
     }
     &__list {
-      li {
-        flex-direction: column;
-      }
+    li {
+      flex-direction: column;
+    }
+    .list__link .link__long {
+      width: 100%;
+    }
   }
   }
   .picker {

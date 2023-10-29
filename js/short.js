@@ -8,7 +8,9 @@ const ItemCtrl = (function() {
 
   const data = {
     items: [
-      { id: 0, url: 'https://www.pexels.com/photo/young-man-sitting-in-a-car-on-a-night-street-18073372/', shortUrl: 'https://sho/link/j8t5'}
+      { id: 0,
+        url: '',
+        shortUrl: ''}
     ],
     currentItem: null
   }
@@ -24,21 +26,23 @@ const ItemCtrl = (function() {
       } else {
         ID = 0
       }
-      let shortLink = ItemCtrl.generateLink();
+      let shortLink = ItemCtrl.generateLink(link);
+      debugger
       newItem = new Item(ID, link, shortLink)
       data.items.push(newItem)
       return newItem
     },
-    generateLink: function() {
-      const c1 = ItemCtrl.generateCharacter()
-      const c2 = ItemCtrl.generateCharacter()
-      const c3 = ItemCtrl.generateCharacter()
-      const c4 = ItemCtrl.generateCharacter()
-      return 'https://prty.link/'+c1+c2+c3+c4
-    },
-    generateCharacter: function() {
-      const arr = 'abcdefghijklmnopqrstuvwxyz1234567890'
-      return arr[Math.floor(Math.random()*arr.length)]
+    generateLink: async function(url) {
+      const result = await fetch(`https://shrtlnk.dev/api/v2/${url}`, {
+        header: {
+          'api-key': 'W7fC3Z5Z8AVK4YgrxfhuxeVCo3WVpQCkTEd9j4KB8PAlP',
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+        }
+      })
+      .then(response => response.json())
+      .then((data) => console.log(data))
+      .catch(() => console.error('Failed to fetch'))
     },
     getItemById: function (id) {
       let found = null;
@@ -123,7 +127,7 @@ const App = (function(ItemCtrl, UICtrl) {
   const addLink = function(e) {
     const input = UICtrl.getLinkInput()
     if(input.longLink !== false) {
-      const re = /(https?:\/\/(?:www\.|(?!www)) [a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|www\.[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|https?:\/\/(?:www\.|(?!www)) [a-zA-Z0-9]+\.[^\s]{2,}|www\.[a-zA-Z0-9]+\.[^\s]{2,})/;
+      const re = /(https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|www\.[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9]+\.[^\s]{2,}|www\.[a-zA-Z0-9]+\.[^\s]{2,})/;
       if(re.test(input.longLink) == false) {
         UICtrl.errorLink()
       } else if(re.test(input.longLink) == true) {

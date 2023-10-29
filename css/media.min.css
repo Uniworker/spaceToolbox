@@ -87,6 +87,9 @@
   .main__list li {
     flex-direction: column;
   }
+  .main__list .list__link .link__long {
+    width: 100%;
+  }
   .picker {
     width: 100%;
   }

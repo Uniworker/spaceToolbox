@@ -274,6 +274,8 @@ textarea {
     align-items: center;
     .link__long {
       display: inline-block;
+      max-width: 350px;
+      word-wrap: break-word;
       color: #c3423f;
       padding: 0.5rem 1rem 0.5rem 0;
       text-decoration: line-through;
