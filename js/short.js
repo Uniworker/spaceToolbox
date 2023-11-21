@@ -1,4 +1,4 @@
-const ItemCtrl = (function() {
+const ItemCtrl = ( function() {
   
   const Item = function(id, url, shortUrl) {
     this.id = id;
@@ -16,46 +16,48 @@ const ItemCtrl = (function() {
   }
 
   return {
-    logData: function() {
+    logData: function () {
       return data;
     },
-    addLink: function(link) {
+    addLink: async function (link) {
       let ID;
-      if(data.items.length > 0) {
-        ID = data.items[data.items.length - 1].id + 1
+      if (data.items.length > 0) {
+        ID = data.items[data.items.length - 1].id + 1;
       } else {
-        ID = 0
+        ID = 0;
       }
-      let shortLink = ItemCtrl.generateLink(link);
+      let shortLink = await ItemCtrl.generateLink(link)
+      newItem = new Item(ID, link, shortLink);
       debugger
-      newItem = new Item(ID, link, shortLink)
-      data.items.push(newItem)
-      return newItem
+      data.items.push(newItem);
+      return newItem;
     },
-    generateLink: async function(url) {
-      const result = await fetch(`https://shrtlnk.dev/api/v2/${url}`, {
-        header: {
-          'api-key': 'W7fC3Z5Z8AVK4YgrxfhuxeVCo3WVpQCkTEd9j4KB8PAlP',
-          'Accept': 'application/json',
-          'Content-Type': 'application/json'
-        }
+    generateLink: async function (url) {
+      return await fetch('https://url-shortener-service.p.rapidapi.com/shorten', {
+        method: 'POST',
+        headers: {
+          'content-type': 'application/x-www-form-urlencoded',
+          'X-RapidAPI-Key': 'a56d5544damsh258cedd1ff8904ep15d5b0jsn5efa4ae15590',
+          'X-RapidAPI-Host': 'url-shortener-service.p.rapidapi.com'
+        },
+        body: new URLSearchParams({ url: `${url}` })
       })
-      .then(response => response.json())
-      .then((data) => console.log(data))
-      .catch(() => console.error('Failed to fetch'))
+        .then(response => response.json())
+        .then(data => data.result_url)
+        .catch(err => console.error(err));
     },
     getItemById: function (id) {
       let found = null;
       data.items.forEach(item => {
         if (item.id === id) {
-          found = item
+          found = item;
         }
       });
-      return found
+      return found;
     },
-    setCurrentLink: function(link) {
-      data.currentItem = link
-      return data.currentItem.shortUrl
+    setCurrentLink: function (link) {
+      data.currentItem = link;
+      return data.currentItem.shortUrl;
     }
   }
 })()
@@ -124,14 +126,14 @@ const App = (function(ItemCtrl, UICtrl) {
     document.querySelector(UISelectors.linksContainer).addEventListener('click', copyLink)
   }
 
-  const addLink = function(e) {
+  const addLink = async function(e) {
     const input = UICtrl.getLinkInput()
     if(input.longLink !== false) {
       const re = /(https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|www\.[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9]+\.[^\s]{2,}|www\.[a-zA-Z0-9]+\.[^\s]{2,})/;
       if(re.test(input.longLink) == false) {
         UICtrl.errorLink()
       } else if(re.test(input.longLink) == true) {
-        const newLink = ItemCtrl.addLink(input.longLink)
+        const newLink = await ItemCtrl.addLink(input.longLink)
         UICtrl.addListLink(newLink)
         UICtrl.clearInput()
       }

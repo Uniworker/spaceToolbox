@@ -282,6 +282,8 @@ textarea {
     }
     .link__short {
       display: inline-block;
+      max-width: 200px;
+      word-wrap: break-word;
       color: #2bc016;
       padding: 0.5rem 1rem 0.5rem 0;
       font-weight: bold;
