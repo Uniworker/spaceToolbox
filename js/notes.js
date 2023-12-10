@@ -61,8 +61,8 @@ window.onload = function () {
     if (e.target.classList.contains('main__btn')) {
       if (text.value !== '' && text.value !== prevData) {
         notes.push(new Note(document.getElementById('list'), text.value, notes.length))
-        /*localStorage.setItem('note', JSON.stringify(notes[0]))
-        console.table(localStorage.getItem('note'))
+        /*notes += localStorage.setItem('note', JSON.stringify(new Note(document.getElementById('list'), text.value, notes.length)))
+        console.log(localStorage.getItem('note'))
         debugger*/
         prevData = text.value;
         if (text.hasAttribute('maxlength')) text.value = text.value.slice(0, text.maxLength);
